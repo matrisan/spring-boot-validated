@@ -22,11 +22,23 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ValidGroupController {
 
+    /**
+     * 分组校验:校验新建的情况
+     *
+     * @param userGroupDO UserGroupDO
+     * @return UserGroupDO
+     */
     @PostMapping("group")
     public UserGroupDO postUserGroupDO(@RequestBody @Validated({IPostCreate.class}) UserGroupDO userGroupDO) {
         return userGroupDO;
     }
 
+    /**
+     * 分组校验:校验更新的情况
+     *
+     * @param userGroupDO UserGroupDO
+     * @return UserGroupDO
+     */
     @PutMapping("group")
     public UserGroupDO putUserGroupDO(@RequestBody @Validated({IPutUpdate.class}) UserGroupDO userGroupDO) {
         return userGroupDO;

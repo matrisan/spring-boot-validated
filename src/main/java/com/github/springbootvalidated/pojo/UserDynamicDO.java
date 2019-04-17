@@ -29,7 +29,7 @@ public class UserDynamicDO {
 
     @NotNull
     @Dynamic
-    private Set<String> books;
+    private String num;
 
     @Override
     public String toString() {

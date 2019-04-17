@@ -22,6 +22,13 @@ import javax.validation.constraints.NotBlank;
 @RestController
 public class ValidCrossController {
 
+    /**
+     * 交叉校验,逻辑可以自定义,也可以用在普通的方法上,不仅仅是 Controller 上
+     *
+     * @param pass1 String
+     * @param pass2 String
+     * @return String
+     */
     @Cross
     @GetMapping("cross/{pass1}/{pass2}")
     public String getCrossParameter(@NotBlank @PathVariable String pass1, @NotBlank @PathVariable String pass2) {

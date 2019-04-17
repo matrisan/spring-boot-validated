@@ -23,6 +23,12 @@ import javax.validation.constraints.Size;
 @RestController
 public class ValidMethodController {
 
+    /**
+     * 方法参数校验
+     *
+     * @param data String
+     * @return String
+     */
     @GetMapping("/method/{data}")
     public String getPathVariable(@Size(min = 3, max = 6) @PathVariable String data) {
         return data;

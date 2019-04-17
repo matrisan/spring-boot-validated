@@ -21,6 +21,12 @@ import javax.validation.constraints.Size;
 @RestController
 public class ValidMessageController {
 
+    /**
+     * 自定义返回提醒信息
+     *
+     * @param data String
+     * @return String
+     */
     @GetMapping("message/{data}")
     public String getData(@Size(min = 3, max = 6, message = "{data.size}") @PathVariable String data) {
         return data;

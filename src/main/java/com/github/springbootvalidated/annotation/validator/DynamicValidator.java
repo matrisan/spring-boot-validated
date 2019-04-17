@@ -4,7 +4,6 @@ import com.github.springbootvalidated.annotation.Dynamic;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
-import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 
 /**
@@ -19,7 +18,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
  */
 
 
-public class DynamicValidator implements ConstraintValidator<Dynamic, Set<String>> {
+public class DynamicValidator implements ConstraintValidator<Dynamic, String> {
 
     /**
      * 得用线程安全的容器,当对容器中元素进行遍历同时增加数据时会抛出 fail-fast 错误
@@ -27,8 +26,8 @@ public class DynamicValidator implements ConstraintValidator<Dynamic, Set<String
     private volatile static CopyOnWriteArraySet<String> dynamicSet;
 
     @Override
-    public boolean isValid(Set<String> set, ConstraintValidatorContext constraintValidatorContext) {
-        return dynamicSet.containsAll(set);
+    public boolean isValid(String set, ConstraintValidatorContext constraintValidatorContext) {
+        return dynamicSet.contains(set);
     }
 
     public static void setSet(CopyOnWriteArraySet<String> set) {

@@ -25,6 +25,12 @@ import java.util.Set;
 @RestController
 public class ValidManualController {
 
+    /**
+     * 某些特殊情况下需要手动去校验对象
+     *
+     * @param userParentDO UserParentDO
+     * @return UserParentDO
+     */
     @PostMapping("manual")
     public UserParentDO postUserParentDO(@RequestBody UserParentDO userParentDO) {
         return validManual(userParentDO);

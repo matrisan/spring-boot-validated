@@ -20,6 +20,12 @@ import javax.validation.Valid;
 @RestController
 public class ValidCommonController {
 
+    /**
+     * 使用 JSR303 自带的校验注解进行校验
+     *
+     * @param userCommonDO UserCommonDO
+     * @return UserCommonDO
+     */
     @PostMapping("common")
     public UserCommonDO postUserCommonDO(@RequestBody @Valid UserCommonDO userCommonDO) {
         return userCommonDO;

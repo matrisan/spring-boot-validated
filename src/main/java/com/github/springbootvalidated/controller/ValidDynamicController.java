@@ -21,6 +21,12 @@ import javax.validation.Valid;
 @RestController
 public class ValidDynamicController {
 
+    /**
+     * 动态数据校验.校验的某个字段数据是存在数据库中,校验的字段存在动态更新情况.
+     *
+     * @param dynamicDO UserDynamicDO
+     * @return UserDynamicDO
+     */
     @PostMapping("dynamic")
     public UserDynamicDO postUserDynamicDO(@RequestBody @Valid UserDynamicDO dynamicDO) {
         return dynamicDO;
