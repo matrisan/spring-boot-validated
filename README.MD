@@ -150,3 +150,57 @@ https://www.jianshu.com/p/764eaf6c0afe
 
 
 
+
+
+* 常规参数校验
+```
+class User{
+    private String name;
+    private String email;
+    private Integer age;
+    private Date birthday;
+    private List<String> list;
+}
+```
+
+```
+User user;
+if (StringUtils.isNotblank(user.getName())){
+    //TODO 
+}
+if (user.getAge() > 0 ...){
+    //TODO 
+}
+...
+    
+```
+
+
+* 自定义校验逻辑
+
+
+
+
+
+* 任意方法参数校验
+
+
+
+* 数据库动态校验
+
+
+
+* 分组校验
+数据的创建与更新校验逻辑不同
+
+
+* 交叉校验
+校验密码两次输入是否相同
+
+
+
+
+
+
+
+
