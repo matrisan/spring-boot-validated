@@ -27,6 +27,9 @@ public class UserIDServiceImpl implements IUserIDService {
         SERVICE = this;
     }
 
+    /**
+     * 模拟访问数据库
+     */
     private List<String> userIdList = Arrays.asList("11", "22", "33");
 
     @Override
