@@ -1,10 +1,11 @@
 package com.github.springbootvalidated.annotation.validator;
 
 import com.github.springbootvalidated.annotation.Dynamic;
+import com.github.springbootvalidated.service.IUserIDService;
 
+import javax.annotation.Resource;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
-import java.util.concurrent.CopyOnWriteArraySet;
 
 /**
  * <p>
@@ -20,17 +21,12 @@ import java.util.concurrent.CopyOnWriteArraySet;
 
 public class DynamicValidator implements ConstraintValidator<Dynamic, String> {
 
-    /**
-     * 得用线程安全的容器,当对容器中元素进行遍历同时增加数据时会抛出 fail-fast 错误
-     */
-    private volatile static CopyOnWriteArraySet<String> dynamicSet;
+    @Resource
+    private IUserIDService service;
 
     @Override
     public boolean isValid(String set, ConstraintValidatorContext constraintValidatorContext) {
-        return dynamicSet.contains(set);
+        return service.existByUserId(set);
     }
 
-    public static void setSet(CopyOnWriteArraySet<String> set) {
-        DynamicValidator.dynamicSet = set;
-    }
 }
