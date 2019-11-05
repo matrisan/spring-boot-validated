@@ -1,6 +1,6 @@
 package com.github.springbootvalidated.annotation;
 
-import com.github.springbootvalidated.annotation.validator.DynamicValidator;
+import com.github.springbootvalidated.annotation.validator.StringRangeValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -12,7 +12,7 @@ import java.lang.annotation.Target;
 
 /**
  * <p>
- * 创建时间为 12:47 2019-04-17
+ * 创建时间为 14:52 2019-04-17
  * 项目名称 spring-boot-validated
  * </p>
  *
@@ -24,15 +24,16 @@ import java.lang.annotation.Target;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.ANNOTATION_TYPE})
-//指定注解的处理类
-@Constraint(validatedBy = DynamicValidator.class)
-public @interface Dynamic {
+@Constraint(validatedBy = StringRangeValidator.class)
+public @interface StringRange {
 
-    String value() default "";
+    String[] value();
 
-    String message() default "Dynamic 不存在";
+    String message() default "AnnoValidator 不存在";
 
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
+
+
 }

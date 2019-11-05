@@ -1,6 +1,6 @@
 package com.github.springbootvalidated.annotation;
 
-import com.github.springbootvalidated.annotation.validator.DefinedValidator;
+import com.github.springbootvalidated.annotation.validator.GenderValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -12,7 +12,7 @@ import java.lang.annotation.Target;
 
 /**
  * <p>
- * 创建时间为 14:52 2019-04-17
+ * 创建时间为 下午6:13 2019/9/27
  * 项目名称 spring-boot-validated
  * </p>
  *
@@ -24,8 +24,8 @@ import java.lang.annotation.Target;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.ANNOTATION_TYPE})
-@Constraint(validatedBy = DefinedValidator.class)
-public @interface Defined {
+@Constraint(validatedBy = GenderValidator.class)
+public @interface Gender {
 
     String[] value();
 

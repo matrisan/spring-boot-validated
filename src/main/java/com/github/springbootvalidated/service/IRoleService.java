@@ -2,7 +2,7 @@ package com.github.springbootvalidated.service;
 
 /**
  * <p>
- * 创建时间为 下午2:09 2019/9/4
+ * 创建时间为 下午6:21 2019/9/27
  * 项目名称 spring-boot-validated
  * </p>
  *
@@ -11,8 +11,7 @@ package com.github.springbootvalidated.service;
  * @since 0.0.1
  */
 
-public interface IUserIDService {
+public interface IRoleService {
 
-    boolean existByUserId(String userId);
-
+    boolean existByRoleId(String id);
 }

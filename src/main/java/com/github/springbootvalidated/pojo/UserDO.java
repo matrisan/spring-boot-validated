@@ -1,7 +1,6 @@
 package com.github.springbootvalidated.pojo;
 
 import com.alibaba.fastjson.JSON;
-import com.github.springbootvalidated.annotation.UserId;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -25,7 +24,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class UserDO {
 
-    @UserId
+//    @UserId
     private String id;
 
     private String desc;

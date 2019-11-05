@@ -29,9 +29,4 @@ public class CrossValidator implements ConstraintValidator<Cross, Object[]> {
         return StringUtils.equalsIgnoreCase((String) values[0], (String) values[1]);
     }
 
-    @Override
-    public void initialize(Cross constraintAnnotation) {
-
-    }
-
 }

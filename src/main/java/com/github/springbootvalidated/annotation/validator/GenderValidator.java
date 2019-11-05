@@ -1,6 +1,7 @@
 package com.github.springbootvalidated.annotation.validator;
 
-import com.github.springbootvalidated.annotation.Defined;
+import com.github.springbootvalidated.annotation.Gender;
+import com.github.springbootvalidated.annotation.StringRange;
 import com.google.common.collect.Sets;
 
 import javax.validation.ConstraintValidator;
@@ -19,7 +20,7 @@ import java.util.Set;
  */
 
 
-public class DefinedValidator implements ConstraintValidator<Defined, String> {
+public class GenderValidator implements ConstraintValidator<Gender, String> {
 
     private Set<String> values;
 
@@ -29,7 +30,7 @@ public class DefinedValidator implements ConstraintValidator<Defined, String> {
     }
 
     @Override
-    public void initialize(Defined built) {
+    public void initialize(Gender built) {
         this.values = Sets.newHashSet(built.value());
     }
 

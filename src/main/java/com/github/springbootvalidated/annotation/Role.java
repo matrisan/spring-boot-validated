@@ -1,6 +1,6 @@
 package com.github.springbootvalidated.annotation;
 
-import com.github.springbootvalidated.annotation.validator.UserIdValidator;
+import com.github.springbootvalidated.annotation.validator.RoleHandler;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -12,7 +12,7 @@ import java.lang.annotation.Target;
 
 /**
  * <p>
- * 创建时间为 12:47 2019-04-17
+ * 创建时间为 下午6:19 2019/9/27
  * 项目名称 spring-boot-validated
  * </p>
  *
@@ -20,13 +20,12 @@ import java.lang.annotation.Target;
  * @version 0.0.1
  * @since 0.0.1
  */
-
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.ANNOTATION_TYPE})
 //指定注解的处理类
-@Constraint(validatedBy = UserIdValidator.class)
-public @interface UserId {
+@Constraint(validatedBy = RoleHandler.class)
+public @interface Role {
 
     String value() default "";
 
