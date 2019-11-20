@@ -18,6 +18,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -37,7 +38,7 @@ import javax.validation.constraints.NotBlank;
 @AllArgsConstructor
 @Entity
 @Table(name = "user_info")
-public class UserInfoDO {
+public class UserInfoDO  implements Serializable {
 
     @UserId(groups = {IPutUpdate.class})
     @Id

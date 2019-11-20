@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
+
 /**
  * <p>
  * 创建时间为 11:28 2019-04-17
@@ -22,7 +24,7 @@ import lombok.Setter;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDO {
+public class UserDO  implements Serializable {
 
 //    @UserId
     private String id;

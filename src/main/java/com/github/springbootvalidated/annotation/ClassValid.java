@@ -1,6 +1,6 @@
 package com.github.springbootvalidated.annotation;
 
-import com.github.springbootvalidated.annotation.validator.StringRangeValidator;
+import com.github.springbootvalidated.annotation.validator.ClassValidValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -12,7 +12,7 @@ import java.lang.annotation.Target;
 
 /**
  * <p>
- * 创建时间为 14:52 2019-04-17
+ * 创建时间为 上午10:42 2019/11/20
  * 项目名称 spring-boot-validated
  * </p>
  *
@@ -23,17 +23,15 @@ import java.lang.annotation.Target;
 
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.FIELD, ElementType.ANNOTATION_TYPE})
-@Constraint(validatedBy = StringRangeValidator.class)
-public @interface StringRange {
+@Target({ElementType.TYPE, ElementType.ANNOTATION_TYPE})
+@Constraint(validatedBy = ClassValidValidator.class)
+public @interface ClassValid {
 
-    String[] value();
+    String value() default "";
 
-    String message() default "StringRange 不存在";
+    String message() default "用户 ID 不存在";
 
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
-
-
 }

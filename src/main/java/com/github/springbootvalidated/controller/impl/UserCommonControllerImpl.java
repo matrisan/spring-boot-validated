@@ -1,5 +1,6 @@
 package com.github.springbootvalidated.controller.impl;
 
+import com.github.springbootvalidated.controller.IUserCommonController;
 import com.github.springbootvalidated.pojo.UserCommonDO;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,16 +19,11 @@ import javax.validation.Valid;
  * @since 0.0.1
  */
 @RestController
-public class ValidCommonController {
+public class UserCommonControllerImpl implements IUserCommonController {
 
-    /**
-     * 使用 JSR303 自带的校验注解进行校验
-     *
-     * @param userCommonDO UserCommonDO
-     * @return UserCommonDO
-     */
     @PostMapping("common")
-    public UserCommonDO postUserCommonDO(@RequestBody @Valid UserCommonDO userCommonDO) {
+    @Override
+    public UserCommonDO postUserCommon(@RequestBody @Valid UserCommonDO userCommonDO) {
         return userCommonDO;
     }
 

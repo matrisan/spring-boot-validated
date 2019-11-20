@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -18,7 +19,7 @@ import javax.validation.constraints.NotBlank;
  */
 @Getter
 @Setter
-public class UserParentDO {
+public class UserParentDO implements Serializable {
 
     @NotBlank
     private String name;

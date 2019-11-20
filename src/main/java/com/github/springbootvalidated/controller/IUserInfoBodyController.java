@@ -20,11 +20,9 @@ import java.util.List;
  * @since 0.0.1
  */
 
-public interface IUserInfoController {
+public interface IUserInfoBodyController {
 
     Page<UserInfoDO> findAll(Pageable pageable);
-
-    List<UserInfoDO> getUsersByAge(@Range(min = 0, max = 1000) Integer age);
 
     /**
      * 交叉校验,逻辑可以自定义,也可以用在普通的方法上,不仅仅是 Controller 上
@@ -36,10 +34,8 @@ public interface IUserInfoController {
     @Cross
     String passCheck(String pass1, String pass2);
 
-
     UserInfoDO createUser(@Validated UserInfoDO userInfoDO);
 
     UserInfoDO updateUser(@Validated UserInfoDO userInfoDO);
-
 
 }

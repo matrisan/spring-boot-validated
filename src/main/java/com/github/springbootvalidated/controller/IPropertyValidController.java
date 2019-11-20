@@ -13,7 +13,7 @@ import com.github.springbootvalidated.config.ConfigValidateProperty;
  * @since 0.0.1
  */
 
-public interface IPropertyController {
+public interface IPropertyValidController {
 
     /**
      * 查询从配置文件(application.properties)读取到的配置信息

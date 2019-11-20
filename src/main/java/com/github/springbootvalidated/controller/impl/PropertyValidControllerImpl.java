@@ -1,7 +1,7 @@
 package com.github.springbootvalidated.controller.impl;
 
 import com.github.springbootvalidated.config.ConfigValidateProperty;
-import com.github.springbootvalidated.controller.IPropertyController;
+import com.github.springbootvalidated.controller.IPropertyValidController;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +18,7 @@ import javax.annotation.Resource;
  * @since 0.0.1
  */
 @RestController
-public class PropertyControllerImpl implements IPropertyController {
+public class PropertyValidControllerImpl implements IPropertyValidController {
 
     @Resource
     private ConfigValidateProperty validate;

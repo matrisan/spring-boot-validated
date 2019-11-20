@@ -24,7 +24,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.ANNOTATION_TYPE})
 //指定注解的处理类
-@Constraint(validatedBy = UserIdValidator.class)
+@Constraint(validatedBy = {UserIdValidator.class})
 public @interface UserId {
 
     String value() default "";

@@ -1,8 +1,8 @@
 package com.github.springbootvalidated.annotation.validator;
 
 import com.github.springbootvalidated.annotation.Gender;
-import com.github.springbootvalidated.annotation.StringRange;
 import com.google.common.collect.Sets;
+import org.jetbrains.annotations.NotNull;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
@@ -30,7 +30,7 @@ public class GenderValidator implements ConstraintValidator<Gender, String> {
     }
 
     @Override
-    public void initialize(Gender built) {
+    public void initialize(@NotNull Gender built) {
         this.values = Sets.newHashSet(built.value());
     }
 

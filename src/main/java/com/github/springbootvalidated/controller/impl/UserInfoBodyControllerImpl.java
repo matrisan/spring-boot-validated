@@ -3,10 +3,9 @@ package com.github.springbootvalidated.controller.impl;
 import com.github.springbootvalidated.annotation.Cross;
 import com.github.springbootvalidated.annotation.group.IPostCreate;
 import com.github.springbootvalidated.annotation.group.IPutUpdate;
-import com.github.springbootvalidated.controller.IUserInfoController;
+import com.github.springbootvalidated.controller.IUserInfoBodyController;
 import com.github.springbootvalidated.pojo.UserInfoDO;
 import com.github.springbootvalidated.repository.IUserInfoRepository;
-import org.hibernate.validator.constraints.Range;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -20,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * 对单个参数校验时需要在类上面使用@Validated
@@ -38,7 +36,7 @@ import java.util.List;
 
 @Validated
 @RestController
-public class UserInfoControllerImpl implements IUserInfoController {
+public class UserInfoBodyControllerImpl implements IUserInfoBodyController {
 
     @Resource
     private IUserInfoRepository repository;
@@ -50,11 +48,6 @@ public class UserInfoControllerImpl implements IUserInfoController {
         return repository.findAll(pageable);
     }
 
-    @GetMapping("/user/age/{age}")
-    @Override
-    public List<UserInfoDO> getUsersByAge(@PathVariable @Range(min = 0, max = 1000) Integer age) {
-        return repository.findAllByAgeEquals(age);
-    }
 
     @Cross
     @GetMapping("/user/{pass1}/{pass2}")
