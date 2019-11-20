@@ -1,6 +1,7 @@
-package com.github.springbootvalidated.controller;
+package com.github.springbootvalidated.controller.impl;
 
 import com.github.springbootvalidated.pojo.UserParentDO;
+import org.jetbrains.annotations.Contract;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,6 +38,7 @@ public class ValidManualController {
     }
 
 
+    @Contract("_ -> param1")
     private UserParentDO validManual(UserParentDO userParentDO) {
         // 这两行可以提取为公共对象
         ValidatorFactory vf = Validation.buildDefaultValidatorFactory();

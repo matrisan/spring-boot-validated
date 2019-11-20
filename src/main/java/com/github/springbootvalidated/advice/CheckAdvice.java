@@ -1,6 +1,9 @@
 package com.github.springbootvalidated.advice;
 
 import com.alibaba.fastjson.JSON;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.exception.ExceptionUtils;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -21,7 +24,7 @@ import javax.validation.ConstraintViolationException;
  * @since 0.0.1
  */
 
-
+@Slf4j
 @RestControllerAdvice
 public class CheckAdvice {
 
@@ -33,8 +36,8 @@ public class CheckAdvice {
      */
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<String> handleBindException1(MethodArgumentNotValidException e) {
-        e.getBindingResult().getAllErrors().forEach(System.out::println);
+    public ResponseEntity<String> handleBindException1(@NotNull MethodArgumentNotValidException e) {
+        log.info(ExceptionUtils.getMessage(e));
         return new ResponseEntity<>("ERROR:" + JSON.toJSONString(e.getBindingResult().getAllErrors()), HttpStatus.BAD_REQUEST);
     }
 
@@ -46,7 +49,8 @@ public class CheckAdvice {
      */
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(ConstraintViolationException.class)
-    public String handleBindException2(ConstraintViolationException e) {
+    public String handleBindException2(@NotNull ConstraintViolationException e) {
+        log.info(ExceptionUtils.getMessage(e));
         e.getConstraintViolations().forEach(System.out::println);
         return "ConstraintViolationException";
     }

@@ -1,4 +1,4 @@
-package com.github.springbootvalidated.controller;
+package com.github.springbootvalidated.controller.impl;
 
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;

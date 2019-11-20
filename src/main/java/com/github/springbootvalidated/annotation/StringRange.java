@@ -29,7 +29,7 @@ public @interface StringRange {
 
     String[] value();
 
-    String message() default "AnnoValidator 不存在";
+    String message() default "StringRange 不存在";
 
     Class<?>[] groups() default {};
 

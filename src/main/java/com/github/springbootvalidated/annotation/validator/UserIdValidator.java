@@ -1,7 +1,7 @@
 package com.github.springbootvalidated.annotation.validator;
 
-import com.github.springbootvalidated.annotation.Role;
-import com.github.springbootvalidated.service.IRoleService;
+import com.github.springbootvalidated.annotation.UserId;
+import com.github.springbootvalidated.repository.IUserInfoRepository;
 
 import javax.annotation.Resource;
 import javax.validation.ConstraintValidator;
@@ -18,14 +18,14 @@ import javax.validation.ConstraintValidatorContext;
  * @since 0.0.1
  */
 
-public class RoleHandler implements ConstraintValidator<Role, String> {
+public class UserIdValidator implements ConstraintValidator<UserId, Long> {
 
     @Resource
-    private IRoleService service;
+    private IUserInfoRepository repository;
 
     @Override
-    public boolean isValid(String value, ConstraintValidatorContext context) {
-        return service.existByRoleId(value);
+    public boolean isValid(Long aLong, ConstraintValidatorContext constraintValidatorContext) {
+        return repository.existsById(aLong);
     }
 
 }

@@ -43,7 +43,7 @@ public class RoleControllerImplTest {
     public void createRole() throws Exception {
         String data = JSON.toJSONString(UserDO.builder().id("11").build());
         mockMvc.perform(MockMvcRequestBuilders.post("/role")
-                .contentType(MediaType.APPLICATION_JSON_UTF8).content(data))
+                .contentType(MediaType.APPLICATION_JSON).content(data))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value("11"))

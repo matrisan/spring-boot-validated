@@ -1,4 +1,4 @@
-package com.github.springbootvalidated.controller;
+package com.github.springbootvalidated.controller.impl;
 
 import com.github.springbootvalidated.annotation.group.IPostCreate;
 import com.github.springbootvalidated.annotation.group.IPutUpdate;

@@ -18,7 +18,7 @@ import javax.annotation.Resource;
  * @since 0.0.1
  */
 @RestController
-public class IPropertyControllerImpl implements IPropertyController {
+public class PropertyControllerImpl implements IPropertyController {
 
     @Resource
     private ConfigValidateProperty validate;

@@ -3,8 +3,10 @@ package com.github.springbootvalidated.controller;
 import com.github.springbootvalidated.annotation.Cross;
 import com.github.springbootvalidated.pojo.UserInfoDO;
 import org.hibernate.validator.constraints.Range;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.validation.annotation.Validated;
 
-import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -18,9 +20,9 @@ import java.util.List;
  * @since 0.0.1
  */
 
-public interface IUserController {
+public interface IUserInfoController {
 
-    UserInfoDO createUser(@Valid UserInfoDO userInfoDO);
+    Page<UserInfoDO> findAll(Pageable pageable);
 
     List<UserInfoDO> getUsersByAge(@Range(min = 0, max = 1000) Integer age);
 
@@ -33,5 +35,11 @@ public interface IUserController {
      */
     @Cross
     String passCheck(String pass1, String pass2);
+
+
+    UserInfoDO createUser(@Validated UserInfoDO userInfoDO);
+
+    UserInfoDO updateUser(@Validated UserInfoDO userInfoDO);
+
 
 }

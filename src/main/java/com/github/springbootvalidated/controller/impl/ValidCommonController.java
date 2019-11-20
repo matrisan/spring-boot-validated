@@ -1,4 +1,4 @@
-package com.github.springbootvalidated.controller;
+package com.github.springbootvalidated.controller.impl;
 
 import com.github.springbootvalidated.pojo.UserCommonDO;
 import org.springframework.web.bind.annotation.PostMapping;

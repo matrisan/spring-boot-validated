@@ -29,7 +29,7 @@ public @interface Gender {
 
     String[] value();
 
-    String message() default "AnnoValidator 不存在";
+    String message() default "Gender 不存在";
 
     Class<?>[] groups() default {};
 

@@ -65,8 +65,8 @@ public class UserControllerImplTest {
     private UserInfoDO createUserInfoDO() {
         return UserInfoDO.builder()
                 .gender("male")
-                .id("id")
-                .role("AA")
+//                .id("id")
+//                .role("AA")
                 .username("name")
                 .password("pass")
                 .build();

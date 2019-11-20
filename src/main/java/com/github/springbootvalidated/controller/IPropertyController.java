@@ -15,5 +15,10 @@ import com.github.springbootvalidated.config.ConfigValidateProperty;
 
 public interface IPropertyController {
 
+    /**
+     * 查询从配置文件(application.properties)读取到的配置信息
+     *
+     * @return ConfigValidateProperty
+     */
     ConfigValidateProperty getConfigValidate();
 }

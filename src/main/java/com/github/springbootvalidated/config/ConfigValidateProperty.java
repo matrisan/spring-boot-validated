@@ -32,6 +32,9 @@ public class ConfigValidateProperty {
     @NotBlank
     private String pass;
 
+    /**
+     * valid 除了能对 Controller 层参数校验外还可以对 application.properties 里面的数据进行校验
+     */
     @Range(min = 11, max = 18)
     private Integer age;
 

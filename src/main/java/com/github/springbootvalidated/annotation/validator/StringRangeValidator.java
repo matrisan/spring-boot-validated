@@ -2,6 +2,7 @@ package com.github.springbootvalidated.annotation.validator;
 
 import com.github.springbootvalidated.annotation.StringRange;
 import com.google.common.collect.Sets;
+import org.jetbrains.annotations.NotNull;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
@@ -29,7 +30,7 @@ public class StringRangeValidator implements ConstraintValidator<StringRange, St
     }
 
     @Override
-    public void initialize(StringRange built) {
+    public void initialize(@NotNull StringRange built) {
         this.values = Sets.newHashSet(built.value());
     }
 
