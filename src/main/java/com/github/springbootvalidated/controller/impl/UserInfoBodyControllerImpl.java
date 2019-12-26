@@ -1,24 +1,13 @@
 package com.github.springbootvalidated.controller.impl;
 
-import com.github.springbootvalidated.annotation.Cross;
-import com.github.springbootvalidated.annotation.group.IPostCreate;
-import com.github.springbootvalidated.annotation.group.IPutUpdate;
 import com.github.springbootvalidated.controller.IUserInfoBodyController;
-import com.github.springbootvalidated.pojo.doo.UserInfoDO;
-import com.github.springbootvalidated.repository.IUserInfoRepository;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
+import com.github.springbootvalidated.pojo.dto.UserInfoDTO;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
+import javax.validation.Valid;
 
 /**
  * 对单个参数校验时需要在类上面使用@Validated
@@ -38,34 +27,10 @@ import javax.annotation.Resource;
 @RestController
 public class UserInfoBodyControllerImpl implements IUserInfoBodyController {
 
-    @Resource
-    private IUserInfoRepository repository;
-
-    @GetMapping("/users")
-    @Override
-    public Page<UserInfoDO> findAll(@PageableDefault(size = 4, page = 1, sort = "id", direction = Sort.Direction.ASC)
-                                            Pageable pageable) {
-        return repository.findAll(pageable);
-    }
-
-
-    @Cross
-    @GetMapping("/user/{pass1}/{pass2}")
-    @Override
-    public String passCheck(@PathVariable String pass1, @PathVariable String pass2) {
-        return pass1 + ":" + pass2;
-    }
-
     @PostMapping("/user")
     @Override
-    public UserInfoDO createUser(@RequestBody @Validated({IPostCreate.class}) UserInfoDO userInfoDO) {
-        return userInfoDO;
-    }
-
-    @PutMapping("/user")
-    @Override
-    public UserInfoDO updateUser(@RequestBody @Validated({IPutUpdate.class}) UserInfoDO userInfoDO) {
-        return repository.save(userInfoDO);
+    public UserInfoDTO createUser(@RequestBody @Valid UserInfoDTO userInfoDTO) {
+        return userInfoDTO;
     }
 
 }
