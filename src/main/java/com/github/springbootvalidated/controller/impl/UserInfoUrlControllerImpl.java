@@ -1,7 +1,7 @@
 package com.github.springbootvalidated.controller.impl;
 
 import com.github.springbootvalidated.controller.IUserInfoUrlController;
-import com.github.springbootvalidated.pojo.UserInfoDO;
+import com.github.springbootvalidated.pojo.doo.UserInfoDO;
 import com.github.springbootvalidated.repository.IUserInfoRepository;
 import org.hibernate.validator.constraints.Range;
 import org.springframework.web.bind.annotation.GetMapping;

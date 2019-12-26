@@ -2,7 +2,7 @@ package com.github.springbootvalidated.controller.impl;
 
 import com.github.springbootvalidated.annotation.group.IPostCreate;
 import com.github.springbootvalidated.annotation.group.IPutUpdate;
-import com.github.springbootvalidated.pojo.UserGroupDO;
+import com.github.springbootvalidated.pojo.doo.UserGroupDO;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;

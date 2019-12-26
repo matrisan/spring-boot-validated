@@ -1,6 +1,6 @@
 package com.github.springbootvalidated.controller;
 
-import com.github.springbootvalidated.pojo.UserCommonDO;
+import com.github.springbootvalidated.pojo.doo.UserCommonDO;
 
 import javax.validation.Valid;
 

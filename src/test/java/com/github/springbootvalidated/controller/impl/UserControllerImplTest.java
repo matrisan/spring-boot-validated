@@ -1,7 +1,7 @@
 package com.github.springbootvalidated.controller.impl;
 
 import com.alibaba.fastjson.JSON;
-import com.github.springbootvalidated.pojo.UserInfoDO;
+import com.github.springbootvalidated.pojo.doo.UserInfoDO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -42,7 +42,7 @@ public class UserControllerImplTest {
     @Test
     public void createUser() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.post("/user")
-                .contentType(MediaType.APPLICATION_JSON_UTF8).content(JSON.toJSONString(createUserInfoDO())))
+                .contentType(MediaType.APPLICATION_JSON).content(JSON.toJSONString(createUserInfoDO())))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value("id"))

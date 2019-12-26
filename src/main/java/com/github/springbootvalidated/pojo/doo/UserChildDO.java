@@ -1,4 +1,4 @@
-package com.github.springbootvalidated.pojo;
+package com.github.springbootvalidated.pojo.doo;
 
 import com.alibaba.fastjson.JSON;
 import lombok.Getter;

@@ -1,6 +1,6 @@
 package com.github.springbootvalidated.repository;
 
-import com.github.springbootvalidated.pojo.UserInfoDO;
+import com.github.springbootvalidated.pojo.doo.UserInfoDO;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

@@ -1,6 +1,6 @@
 package com.github.springbootvalidated.controller.impl;
 
-import com.github.springbootvalidated.pojo.UserParentDO;
+import com.github.springbootvalidated.pojo.doo.UserParentDO;
 import org.jetbrains.annotations.Contract;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

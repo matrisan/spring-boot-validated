@@ -1,7 +1,7 @@
 package com.github.springbootvalidated.controller.impl;
 
 import com.alibaba.fastjson.JSON;
-import com.github.springbootvalidated.pojo.UserDO;
+import com.github.springbootvalidated.pojo.doo.UserDO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

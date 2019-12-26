@@ -4,7 +4,7 @@ import com.github.springbootvalidated.annotation.Cross;
 import com.github.springbootvalidated.annotation.group.IPostCreate;
 import com.github.springbootvalidated.annotation.group.IPutUpdate;
 import com.github.springbootvalidated.controller.IUserInfoBodyController;
-import com.github.springbootvalidated.pojo.UserInfoDO;
+import com.github.springbootvalidated.pojo.doo.UserInfoDO;
 import com.github.springbootvalidated.repository.IUserInfoRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

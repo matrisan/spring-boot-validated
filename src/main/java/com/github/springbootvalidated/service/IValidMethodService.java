@@ -1,6 +1,6 @@
 package com.github.springbootvalidated.service;
 
-import com.github.springbootvalidated.pojo.UserParentDO;
+import com.github.springbootvalidated.pojo.doo.UserParentDO;
 
 import javax.validation.Valid;
 

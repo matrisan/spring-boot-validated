@@ -1,10 +1,14 @@
 package com.github.springbootvalidated.controller.impl;
 
+import com.github.springbootvalidated.pojo.doo.UserMessageDO;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Size;
 
 /**
@@ -27,9 +31,16 @@ public class ValidMessageController {
      * @param data String
      * @return String
      */
-    @GetMapping("message/{data}")
+    @GetMapping("/message/{data}")
     public String getData(@Size(min = 3, max = 6, message = "{data.size}") @PathVariable String data) {
         return data;
     }
+
+
+    @PostMapping("/message")
+    public UserMessageDO save(@RequestBody @Valid UserMessageDO userMessage) {
+        return userMessage;
+    }
+
 
 }

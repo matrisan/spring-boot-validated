@@ -1,4 +1,4 @@
-package com.github.springbootvalidated.pojo;
+package com.github.springbootvalidated.pojo.doo;
 
 import com.github.springbootvalidated.annotation.Gender;
 import com.github.springbootvalidated.annotation.UserId;
@@ -38,7 +38,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Entity
 @Table(name = "user_info")
-public class UserInfoDO  implements Serializable {
+public class UserInfoDO implements Serializable {
 
     @UserId(groups = {IPutUpdate.class})
     @Id

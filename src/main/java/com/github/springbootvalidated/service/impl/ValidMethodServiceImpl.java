@@ -1,6 +1,6 @@
 package com.github.springbootvalidated.service.impl;
 
-import com.github.springbootvalidated.pojo.UserParentDO;
+import com.github.springbootvalidated.pojo.doo.UserParentDO;
 import com.github.springbootvalidated.service.IValidMethodService;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;

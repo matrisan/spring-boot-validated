@@ -1,6 +1,6 @@
 package com.github.springbootvalidated.init;
 
-import com.github.springbootvalidated.pojo.UserInfoDO;
+import com.github.springbootvalidated.pojo.doo.UserInfoDO;
 import com.github.springbootvalidated.repository.IUserInfoRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

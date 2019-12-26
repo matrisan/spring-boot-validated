@@ -1,6 +1,6 @@
 package com.github.springbootvalidated.controller;
 
-import com.github.springbootvalidated.pojo.UserInfoDO;
+import com.github.springbootvalidated.pojo.doo.UserInfoDO;
 import org.hibernate.validator.constraints.Range;
 
 import java.util.List;

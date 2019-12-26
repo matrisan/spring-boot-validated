@@ -1,13 +1,10 @@
 package com.github.springbootvalidated.controller;
 
 import com.github.springbootvalidated.annotation.Cross;
-import com.github.springbootvalidated.pojo.UserInfoDO;
-import org.hibernate.validator.constraints.Range;
+import com.github.springbootvalidated.pojo.doo.UserInfoDO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.validation.annotation.Validated;
-
-import java.util.List;
 
 /**
  * <p>
