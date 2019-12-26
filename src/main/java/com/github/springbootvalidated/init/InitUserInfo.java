@@ -1,6 +1,6 @@
 package com.github.springbootvalidated.init;
 
-import com.github.springbootvalidated.pojo.doo.UserInfoDO;
+import com.github.springbootvalidated.pojo.UserInfoDO;
 import com.github.springbootvalidated.repository.IUserInfoRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -27,8 +27,10 @@ public class InitUserInfo implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         for (int i = 0; i < 8; i++) {
-            UserInfoDO userInfo = UserInfoDO.builder().username("name:" + i).password("pass:" + i)
-                    .age(i).gender("male").build();
+            UserInfoDO userInfo = UserInfoDO.builder()
+                    .username("name:" + i)
+                    .password("pass:" + i)
+                    .build();
             repository.save(userInfo);
         }
     }

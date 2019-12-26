@@ -2,7 +2,7 @@ package com.github.springbootvalidated.annotation.group;
 
 /**
  * <p>
- * 创建时间为 13:41 2019-04-17
+ * 创建时间为 下午5:28 2019/12/26
  * 项目名称 spring-boot-validated
  * </p>
  *
@@ -11,5 +11,5 @@ package com.github.springbootvalidated.annotation.group;
  * @since 0.0.1
  */
 
-public interface IPutUpdate {
+public interface ICreate {
 }

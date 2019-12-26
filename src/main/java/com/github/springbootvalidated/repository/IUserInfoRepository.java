@@ -1,6 +1,6 @@
 package com.github.springbootvalidated.repository;
 
-import com.github.springbootvalidated.pojo.doo.UserInfoDO;
+import com.github.springbootvalidated.pojo.UserInfoDO;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
@@ -17,7 +17,5 @@ import java.util.List;
  */
 
 public interface IUserInfoRepository extends JpaRepository<UserInfoDO, Long> {
-
-    List<UserInfoDO> findAllByAgeEquals(int age);
 
 }
