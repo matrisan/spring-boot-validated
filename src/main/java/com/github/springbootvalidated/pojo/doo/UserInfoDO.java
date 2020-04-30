@@ -40,6 +40,8 @@ import java.io.Serializable;
 @Table(name = "user_info")
 public class UserInfoDO implements Serializable {
 
+    private static final long serialVersionUID = -7498825834204623151L;
+
     @UserId(groups = {IPutUpdate.class})
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
