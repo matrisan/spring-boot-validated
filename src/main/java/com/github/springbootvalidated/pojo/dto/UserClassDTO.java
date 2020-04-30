@@ -1,6 +1,5 @@
 package com.github.springbootvalidated.pojo.dto;
 
-import com.github.springbootvalidated.annotation.ClassValid;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -25,7 +24,6 @@ import lombok.ToString;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@ClassValid
 public class UserClassDTO {
 
     private String field1;

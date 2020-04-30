@@ -1,7 +1,6 @@
 package com.github.springbootvalidated.pojo.doo;
 
-import com.github.springbootvalidated.annotation.Gender;
-import com.github.springbootvalidated.annotation.UserId;
+import com.github.springbootvalidated.annotation.PathUser;
 import com.github.springbootvalidated.annotation.group.IPostCreate;
 import com.github.springbootvalidated.annotation.group.IPutUpdate;
 import lombok.AllArgsConstructor;
@@ -42,7 +41,7 @@ public class UserInfoDO implements Serializable {
 
     private static final long serialVersionUID = -7498825834204623151L;
 
-    @UserId(groups = {IPutUpdate.class})
+    @PathUser(groups = {IPutUpdate.class})
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -57,7 +56,6 @@ public class UserInfoDO implements Serializable {
     private Integer age;
 
     @NotBlank
-    @Gender(value = {"male", "female", "unknown"})
     private String gender;
 
 }

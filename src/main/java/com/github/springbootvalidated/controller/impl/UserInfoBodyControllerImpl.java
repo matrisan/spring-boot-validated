@@ -1,6 +1,6 @@
 package com.github.springbootvalidated.controller.impl;
 
-import com.github.springbootvalidated.annotation.Cross;
+import com.github.springbootvalidated.annotation.PathUser;
 import com.github.springbootvalidated.annotation.group.IPostCreate;
 import com.github.springbootvalidated.annotation.group.IPutUpdate;
 import com.github.springbootvalidated.controller.IUserInfoBodyController;
@@ -48,24 +48,12 @@ public class UserInfoBodyControllerImpl implements IUserInfoBodyController {
         return repository.findAll(pageable);
     }
 
-
-    @Cross
-    @GetMapping("/user/{pass1}/{pass2}")
+    @GetMapping("/user/{id}")
     @Override
-    public String passCheck(@PathVariable String pass1, @PathVariable String pass2) {
-        return pass1 + ":" + pass2;
+    public UserInfoDO findById(@PathVariable("id") @PathUser UserInfoDO user) {
+        return user;
     }
 
-    @PostMapping("/user")
-    @Override
-    public UserInfoDO createUser(@RequestBody @Validated({IPostCreate.class}) UserInfoDO userInfoDO) {
-        return userInfoDO;
-    }
 
-    @PutMapping("/user")
-    @Override
-    public UserInfoDO updateUser(@RequestBody @Validated({IPutUpdate.class}) UserInfoDO userInfoDO) {
-        return repository.save(userInfoDO);
-    }
 
 }
