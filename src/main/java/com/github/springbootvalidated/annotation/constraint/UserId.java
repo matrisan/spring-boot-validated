@@ -4,6 +4,7 @@ import com.github.springbootvalidated.annotation.validator.UserIdValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
+import javax.validation.ReportAsSingleViolation;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -25,6 +26,7 @@ import java.lang.annotation.Target;
 @Target({ElementType.FIELD, ElementType.ANNOTATION_TYPE})
 //指定注解的处理类
 @Constraint(validatedBy = {UserIdValidator.class})
+@ReportAsSingleViolation
 public @interface UserId {
 
     String value() default "";

@@ -25,7 +25,7 @@ import javax.validation.ConstraintViolationException;
  */
 
 @Slf4j
-@RestControllerAdvice
+//@RestControllerAdvice
 public class CheckAdvice {
 
     /**

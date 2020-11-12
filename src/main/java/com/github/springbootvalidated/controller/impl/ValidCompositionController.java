@@ -1,6 +1,6 @@
 package com.github.springbootvalidated.controller.impl;
 
-import com.github.springbootvalidated.pojo.dto.ValidBasicDTO;
+import com.github.springbootvalidated.pojo.dto.ValidCompositionDTO;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,17 +9,17 @@ import javax.validation.Valid;
 
 /**
  * @author 石少东
- * @date 2020-11-12 10:51
+ * @date 2020-11-12 22:52
  * @since 1.0
  */
 
 @RestController
-public class ValidBasicControllerImpl {
+public class ValidCompositionController {
 
-    @PostMapping("basic")
-    public ValidBasicDTO valid(@Valid @RequestBody ValidBasicDTO data) {
+
+    @PostMapping("composition")
+    public ValidCompositionDTO valid(@Valid @RequestBody ValidCompositionDTO data) {
         return data;
     }
-
 
 }
