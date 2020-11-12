@@ -1,9 +1,8 @@
 package com.github.springbootvalidated.annotation.validator;
 
-import com.github.springbootvalidated.annotation.ClassValid;
-import com.github.springbootvalidated.pojo.dto.UserClassDTO;
+import com.github.springbootvalidated.annotation.constraint.ClassValid;
+import com.github.springbootvalidated.pojo.dto.ValidClassDTO;
 import org.apache.commons.lang3.StringUtils;
-import org.jetbrains.annotations.NotNull;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
@@ -21,15 +20,11 @@ import javax.validation.ConstraintValidatorContext;
  * @since 0.0.1
  */
 
-public class ClassValidValidator implements ConstraintValidator<ClassValid, UserClassDTO> {
+public class ClassValidValidator implements ConstraintValidator<ClassValid, ValidClassDTO> {
 
     @Override
-    public boolean isValid(@NotNull UserClassDTO value, ConstraintValidatorContext context) {
-        return StringUtils.equalsIgnoreCase(value.getField1(), value.getField2());
+    public boolean isValid(ValidClassDTO value, ConstraintValidatorContext context) {
+        return StringUtils.equals(value.getPass1(), value.getPass2());
     }
 
-    @Override
-    public void initialize(ClassValid constraintAnnotation) {
-
-    }
 }

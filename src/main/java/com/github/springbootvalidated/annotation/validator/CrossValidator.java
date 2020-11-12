@@ -1,7 +1,6 @@
 package com.github.springbootvalidated.annotation.validator;
 
-import com.alibaba.fastjson.JSON;
-import com.github.springbootvalidated.annotation.Cross;
+import com.github.springbootvalidated.annotation.constraint.Cross;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.validation.ConstraintValidator;
@@ -25,7 +24,6 @@ public class CrossValidator implements ConstraintValidator<Cross, Object[]> {
 
     @Override
     public boolean isValid(Object[] values, ConstraintValidatorContext context) {
-        System.out.println(JSON.toJSONString(values));
         return StringUtils.equalsIgnoreCase((String) values[0], (String) values[1]);
     }
 

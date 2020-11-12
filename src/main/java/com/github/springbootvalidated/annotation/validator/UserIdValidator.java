@@ -1,7 +1,7 @@
 package com.github.springbootvalidated.annotation.validator;
 
-import com.github.springbootvalidated.annotation.UserId;
-import com.github.springbootvalidated.repository.IUserInfoRepository;
+import com.github.springbootvalidated.annotation.constraint.UserId;
+import com.github.springbootvalidated.repository.UserInfoRepository;
 
 import javax.annotation.Resource;
 import javax.validation.ConstraintValidator;
@@ -21,7 +21,7 @@ import javax.validation.ConstraintValidatorContext;
 public class UserIdValidator implements ConstraintValidator<UserId, Long> {
 
     @Resource
-    private IUserInfoRepository repository;
+    private UserInfoRepository repository;
 
     @Override
     public boolean isValid(Long aLong, ConstraintValidatorContext constraintValidatorContext) {
