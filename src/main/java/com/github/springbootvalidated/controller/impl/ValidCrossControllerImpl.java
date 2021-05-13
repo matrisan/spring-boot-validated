@@ -32,7 +32,6 @@ public class ValidCrossControllerImpl implements IValidController<ValidCrossDTO>
      * TODO
      * 这个地方是有点问题的，得修改一下
      *
-     *
      * @param pass1
      * @param pass2
      * @return

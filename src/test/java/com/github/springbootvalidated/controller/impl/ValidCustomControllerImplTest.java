@@ -23,7 +23,7 @@ public class ValidCustomControllerImplTest extends AbstractController {
     private static final ResultMatcher jsonPathMatcher = jsonPath("$.username").value("name1");
 
     @Test
-    public void valid()   {
+    public void valid() {
         postOk(path, postNormal(), jsonPathMatcher);
         postBadRequest(path, postAbnormal());
     }

@@ -33,7 +33,7 @@ import javax.validation.groups.ConvertGroup;
 public class ValidConvertDTO {
 
     @Valid
-    @ConvertGroup(from= First.class, to= Second.class)
+    @ConvertGroup(from = First.class, to = Second.class)
     private String username;
 
     private String password;

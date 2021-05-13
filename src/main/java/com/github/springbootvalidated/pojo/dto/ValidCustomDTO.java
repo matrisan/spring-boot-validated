@@ -24,7 +24,7 @@ public class ValidCustomDTO implements Serializable {
     private static final long serialVersionUID = 4494140703178391031L;
     private String username;
 
-    @Type(value = {"JAVA", "PYTHON", "C", "LUA" })
+    @Type(value = {"JAVA", "PYTHON", "C", "LUA"})
     private String type;
 
 }

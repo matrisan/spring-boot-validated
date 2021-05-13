@@ -19,7 +19,8 @@ import javax.validation.constraints.NotNull;
 public class ValidReturnController {
 
     @PostMapping("return")
-    public @NotNull ValidBasicDTO valid(@RequestBody ValidBasicDTO data) {
+    public @NotNull
+    ValidBasicDTO valid(@RequestBody ValidBasicDTO data) {
         return data;
     }
 
