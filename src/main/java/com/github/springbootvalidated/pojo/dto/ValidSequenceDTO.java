@@ -11,6 +11,7 @@ import javax.validation.GroupSequence;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.groups.Default;
 
 /**
  * 有点类似快速失败得意思，
@@ -25,13 +26,13 @@ import javax.validation.constraints.NotBlank;
 @Setter
 @Builder
 @ToString
-@GroupSequence({First.class, Second.class, ValidSequenceDTO.class})
+@GroupSequence({Default.class, First.class, Second.class, ValidSequenceDTO.class})
 public class ValidSequenceDTO {
 
-    @NotBlank(groups = First.class)
+    @NotBlank(groups = {First.class})
     private String username;
 
-    @NotBlank(groups = Second.class)
+    @NotBlank(groups = {Second.class})
     private String password;
 
     @Min(0)
